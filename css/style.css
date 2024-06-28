@@ -1,0 +1,85 @@
+/* Глобальные стили */
+.site-html {
+  box-sizing: border-box;
+}
+
+.site-body {
+  margin: 0;
+  min-width: 320px;
+  background-color: #030303;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 100%;
+  max-width: 400px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+}
+
+svg {
+  position: absolute;
+  max-width: 400px;
+  width: 100%;
+  fill: none;
+}
+
+svg:nth-child(2) {
+  filter: blur(40px);
+}
+
+svg path {
+  d: path("M0,25 C150,110 150,-60 300,25");
+  stroke: #ff0092;
+  stroke-width: 50;
+  stroke-linecap: round;
+  transform: translate(50px, 50%);
+  animation: animate 2s ease-in-out infinite;
+}
+
+
+
+/* Кадры в анимации */
+@keyframes animate {
+
+  0% {
+    stroke: #ff0092;
+    d: path("M0,25 C150,110 150,-60 300,25");
+  }
+
+  50% {
+    stroke: #00ff00;
+    d: path("M0,25 C160,-50 140,110 300,25");
+  }
+
+}
+
+
+@media (max-width: 576px) {
+  svg {
+    max-width: 250px;
+  }
+
+/* Кадры в анимации */
+@keyframes animate {
+
+  0% {
+    d: path("M0,25 C150,110 150,-60 300,25");
+  }
+
+  50% {
+    d: path("M0,25 C160,-50 140,110 300,25");
+  }
+
+}
+}
